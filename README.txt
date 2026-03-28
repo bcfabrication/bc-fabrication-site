@@ -1,29 +1,23 @@
-# BC Fabrication Website
+BC Fabrication - Final Live Editor Package
 
-This is a static website build for BC Fabrication.
+What this package includes:
+- Full designed homepage
+- Gallery populated with edited images
+- Enquiry form at the bottom of the page only
+- Decap CMS admin at /admin
+- Netlify Identity + Git Gateway compatible setup
 
-## Files
-- `index.html` - main website page
-- `styles.css` - website styling
-- `script.js` - gallery lightbox
-- `assets/` - logo and gallery images
+Important:
+A true live editor requires the site to be connected to GitHub in Netlify.
+This package is ready for that setup.
 
-## Quick start
-Open `index.html` in a browser to preview locally.
+How to use:
+1. Replace the files in your GitHub repo with the files from this package.
+2. Let Netlify redeploy.
+3. In Netlify, enable Identity and Git Gateway.
+4. Invite your email.
+5. Log in at /admin
 
-## Best hosting option
-Netlify is the easiest because the enquiry form is already marked up for Netlify Forms.
-
-## To put it live on Netlify
-1. Create a Netlify account.
-2. Create a new site from a zip upload.
-3. Upload the zip of this website.
-4. Add your custom domain in Netlify settings.
-5. Form submissions will then appear in Netlify Forms.
-
-## Contact details on the site
-- 07714 419915
-- info@bcpowdercoating.co.uk
-
-## Notes
-The images in `assets/` were processed to create a more consistent gallery.
+Notes:
+- There is no popup enquiry bar.
+- The enquiry section is a normal section at the bottom of the homepage.

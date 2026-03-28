@@ -1,16 +1,61 @@
-async function loadJson(p){const r=await fetch(p);return await r.json();}
-function card(t,x){return `<article class="card"><h3>${t}</h3><p>${x}</p></article>`;}
-function galleryCard(i){return `<article class="gallery-card"><button class="gallery-button" data-full="${i.src}" data-title="${i.title}" data-description="${i.description}"><img src="${i.src}" alt="${i.title} by BC Fabrication"><div class="gallery-copy"><h3>${i.title}</h3><p>${i.description}</p></div></button></article>`;}
-(async function(){const site=await loadJson('content/site.json');const gallery=await loadJson('content/gallery.json');
-document.title=site.seo.title;document.querySelector('meta[name="description"]').setAttribute('content',site.seo.description);document.querySelector('meta[name="keywords"]').setAttribute('content',site.seo.keywords);
-brandName.textContent=site.brand.name;brandTagline.textContent=site.brand.tagline;footerBrand.textContent=site.brand.name;footerPhone.textContent=site.brand.phone_display;footerPhone.href='tel:'+site.brand.phone_link;footerEmail.textContent=site.brand.email;footerEmail.href='mailto:'+site.brand.email;footerLocation.textContent=site.brand.location;
-heroEyebrow.textContent=site.hero.eyebrow;heroTitle.textContent=site.hero.title;heroText.textContent=site.hero.text;heroPrimary.textContent=site.hero.primary_button;heroSecondary.textContent=site.hero.secondary_button;heroSecondary.href='tel:'+site.brand.phone_link;heroImage.src=site.hero.hero_image;
-servicesEyebrow.textContent=site.services_intro.eyebrow;servicesTitle.textContent=site.services_intro.title;servicesText.textContent=site.services_intro.text;servicesGrid.innerHTML=site.services.map(s=>card(s.title,s.text)).join('');
-galleryEyebrow.textContent=site.gallery_intro.eyebrow;galleryTitle.textContent=site.gallery_intro.title;galleryText.textContent=site.gallery_intro.text;galleryGrid.innerHTML=gallery.map(galleryCard).join('');
-trustEyebrow.textContent=site.trust.eyebrow;trustTitle.textContent=site.trust.title;trustGrid.innerHTML=site.trust.items.map(s=>card(s.title,s.text)).join('');
-enquiryEyebrow.textContent=site.enquiry.eyebrow;enquiryTitle.textContent=site.enquiry.title;enquiryText.textContent=site.enquiry.text;enquiryButton.textContent=site.enquiry.button;enquiryNotes.textContent=site.enquiry.notes;
-seoEyebrow.textContent=site.seo_section.eyebrow;seoTitle.textContent=site.seo_section.title;seoGrid.innerHTML=site.seo_section.items.map(s=>card(s.title,s.text)).join('');
-const lightbox=document.getElementById('lightbox'),lightboxImage=document.getElementById('lightboxImage'),lightboxTitle=document.getElementById('lightboxTitle'),lightboxDescription=document.getElementById('lightboxDescription'),lightboxClose=document.getElementById('lightboxClose');
-document.querySelectorAll('.gallery-button').forEach(b=>b.addEventListener('click',()=>{lightboxImage.src=b.dataset.full;lightboxImage.alt=b.dataset.title;lightboxTitle.textContent=b.dataset.title;lightboxDescription.textContent=b.dataset.description;lightbox.hidden=false;document.body.style.overflow='hidden';}));
-function closeLightbox(){lightbox.hidden=true;document.body.style.overflow='';} lightboxClose.addEventListener('click',closeLightbox);lightbox.addEventListener('click',e=>{if(e.target===lightbox)closeLightbox()});document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!lightbox.hidden)closeLightbox()});
+
+async function loadJson(path) {
+  const res = await fetch(path);
+  return await res.json();
+}
+function makeCard(title, text) {
+  return `<article class="card"><h3>${title}</h3><p>${text}</p></article>`;
+}
+function makeGallery(item) {
+  return `<article class="gallery-card"><img src="${item.src}" alt="${item.title} by BC Fabrication"><div class="gallery-copy"><h3>${item.title}</h3><p>${item.description}</p></div></article>`;
+}
+(async function init() {
+  const site = await loadJson('content/site.json');
+  const galleryRaw = await loadJson('content/gallery.json');
+  const gallery = Array.isArray(galleryRaw) ? galleryRaw : (galleryRaw.items || []);
+
+  document.title = site.seo.title;
+  document.querySelector('meta[name="description"]').setAttribute('content', site.seo.description);
+  document.querySelector('meta[name="keywords"]').setAttribute('content', site.seo.keywords);
+
+  brandName.textContent = site.brand.name;
+  brandTagline.textContent = site.brand.tagline;
+  footerBrand.textContent = site.brand.name;
+  footerPhone.textContent = site.brand.phone_display;
+  footerPhone.href = 'tel:' + site.brand.phone_link;
+  footerEmail.textContent = site.brand.email;
+  footerEmail.href = 'mailto:' + site.brand.email;
+  footerLocation.textContent = site.brand.location;
+
+  heroEyebrow.textContent = site.hero.eyebrow;
+  heroTitle.textContent = site.hero.title;
+  heroText.textContent = site.hero.text;
+  heroPrimary.textContent = site.hero.primary_button;
+  heroSecondary.textContent = site.hero.secondary_button;
+  heroSecondary.href = 'tel:' + site.brand.phone_link;
+  heroImage.src = site.hero.image;
+
+  servicesEyebrow.textContent = site.services_intro.eyebrow;
+  servicesTitle.textContent = site.services_intro.title;
+  servicesText.textContent = site.services_intro.text;
+  servicesGrid.innerHTML = site.services.map(s => makeCard(s.title, s.text)).join('');
+
+  galleryEyebrow.textContent = site.gallery_intro.eyebrow;
+  galleryTitle.textContent = site.gallery_intro.title;
+  galleryText.textContent = site.gallery_intro.text;
+  galleryGrid.innerHTML = gallery.map(makeGallery).join('');
+
+  aboutEyebrow.textContent = site.about.eyebrow;
+  aboutTitle.textContent = site.about.title;
+  aboutGrid.innerHTML = site.about.items.map(s => makeCard(s.title, s.text)).join('');
+
+  seoEyebrow.textContent = site.seo_section.eyebrow;
+  seoTitle.textContent = site.seo_section.title;
+  seoGrid.innerHTML = site.seo_section.items.map(s => makeCard(s.title, s.text)).join('');
+
+  enquiryEyebrow.textContent = site.enquiry.eyebrow;
+  enquiryTitle.textContent = site.enquiry.title;
+  enquiryText.textContent = site.enquiry.text;
+  enquiryButton.textContent = site.enquiry.button;
+  enquiryNotes.textContent = site.enquiry.notes;
 })();

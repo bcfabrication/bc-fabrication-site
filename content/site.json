@@ -1,1 +1,98 @@
-{"title": "BC Fabrication"}
+{
+  "brand": {
+    "name": "BC Fabrication",
+    "tagline": "Serving customers across the UK",
+    "phone_display": "07714 419915",
+    "phone_link": "07714419915",
+    "email": "info@bcpowdercoating.co.uk",
+    "location": "Bolton"
+  },
+  "seo": {
+    "title": "BC Fabrication | Metal & Composite Side Gates and Driveway Gates",
+    "description": "BC Fabrication supplies bespoke metal and composite side gates and driveway gates. Request a quote online.",
+    "keywords": "metal side gates, composite side gates, driveway gates, composite driveway gates, bespoke gates"
+  },
+  "hero": {
+    "eyebrow": "Metal & Composite Gates",
+    "title": "Bespoke side gates and driveway gates built to suit your property",
+    "text": "BC Fabrication designs and fabricates made-to-measure metal and composite gates with a clean, modern finish. Every project is built for security, durability, and kerb appeal.",
+    "primary_button": "View Our Work",
+    "secondary_button": "Call 07714 419915",
+    "image": "assets/uploads/gallery-03.jpg"
+  },
+  "services_intro": {
+    "eyebrow": "Services",
+    "title": "Made-to-measure gates for side access and driveways",
+    "text": "We specialise in strong fabricated metal and composite gate systems designed for a smart finish and long-lasting performance."
+  },
+  "services": [
+    {
+      "title": "Metal side gates",
+      "text": "Strong fabricated side gates designed for security and everyday use."
+    },
+    {
+      "title": "Composite side gates",
+      "text": "Low-maintenance side gates with a modern look and added privacy."
+    },
+    {
+      "title": "Driveway gates",
+      "text": "Made-to-measure driveway gates in metal or composite for kerb appeal and durability."
+    },
+    {
+      "title": "Powder-coated finishes",
+      "text": "Durable finishes designed to look smart and last."
+    },
+    {
+      "title": "Bespoke fabrication",
+      "text": "Every gate is built around your sizes and preferred style."
+    },
+    {
+      "title": "UK-wide enquiries",
+      "text": "Serving customers across the UK from our base in Bolton."
+    }
+  ],
+  "gallery_intro": {
+    "eyebrow": "Project Gallery",
+    "title": "Real BC Fabrication work",
+    "text": "A selection of recent side gate and driveway gate installations."
+  },
+  "about": {
+    "eyebrow": "Why Choose BC Fabrication",
+    "title": "Clean fabrication, strong finishes, and real project photos",
+    "items": [
+      {
+        "title": "Made to measure",
+        "text": "Built to suit your opening and your chosen style."
+      },
+      {
+        "title": "Professional finish",
+        "text": "Modern fabricated frames with quality composite and metal options."
+      },
+      {
+        "title": "Simple quoting",
+        "text": "Send your sizes and a few details through the enquiry form at the bottom of the page."
+      }
+    ]
+  },
+  "enquiry": {
+    "eyebrow": "Enquiry Form",
+    "title": "Request a gate quote",
+    "text": "Use the form below to send your details. This section sits at the bottom of the page and does not appear as a popup or front overlay.",
+    "button": "Send Enquiry",
+    "notes": "This form is set up for Netlify Forms."
+  },
+  "seo_section": {
+    "eyebrow": "SEO Focus",
+    "title": "Built to help BC Fabrication get found on Google",
+    "items": [
+      {
+        "title": "Relevant service terms",
+        "text": "The site is focused on metal gates, composite gates, side gates, driveway gates, and bespoke fabrication."
+      },
+      {
+        "title": "Strong trust signals",
+        "text": "Real project photos and clear service information help convert visitors into enquiries."
+      }
+    ]
+  }
+}

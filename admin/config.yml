@@ -2,15 +2,131 @@ backend:
   name: git-gateway
   branch: main
 
-media_folder: "assets"
-public_folder: "/assets"
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+publish_mode: simple
 
 collections:
-  - name: "content"
-    label: "Content"
+  - name: "site_content"
+    label: "Site Content"
+    delete: false
+    editor:
+      preview: false
     files:
-      - file: "content/site.json"
-        label: "Site"
+      - label: "Main Site Settings"
         name: "site"
+        file: "content/site.json"
+        format: "json"
         fields:
-          - {label: "Title", name: "title", widget: "string"}
+          - label: "Brand"
+            name: "brand"
+            widget: "object"
+            fields:
+              - { label: "Business Name", name: "name", widget: "string" }
+              - { label: "Top Tagline", name: "tagline", widget: "string" }
+              - { label: "Phone Display", name: "phone_display", widget: "string" }
+              - { label: "Phone Link", name: "phone_link", widget: "string" }
+              - { label: "Email", name: "email", widget: "string" }
+              - { label: "Location", name: "location", widget: "string" }
+
+          - label: "SEO"
+            name: "seo"
+            widget: "object"
+            fields:
+              - { label: "Page Title", name: "title", widget: "string" }
+              - { label: "Meta Description", name: "description", widget: "text" }
+              - { label: "Keywords", name: "keywords", widget: "text" }
+
+          - label: "Hero Section"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+              - { label: "Main Heading", name: "title", widget: "string" }
+              - { label: "Hero Text", name: "text", widget: "text" }
+              - { label: "Primary Button Text", name: "primary_button", widget: "string" }
+              - { label: "Secondary Button Text", name: "secondary_button", widget: "string" }
+              - { label: "Hero Image", name: "image", widget: "image" }
+
+          - label: "Services Intro"
+            name: "services_intro"
+            widget: "object"
+            fields:
+              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Text", name: "text", widget: "text" }
+
+          - label: "Services"
+            name: "services"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Text", name: "text", widget: "text" }
+
+          - label: "Gallery Intro"
+            name: "gallery_intro"
+            widget: "object"
+            fields:
+              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Text", name: "text", widget: "text" }
+
+          - label: "About Section"
+            name: "about"
+            widget: "object"
+            fields:
+              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - label: "Items"
+                name: "items"
+                widget: "list"
+                summary: "{{fields.title}}"
+                fields:
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Text", name: "text", widget: "text" }
+
+          - label: "Enquiry Section"
+            name: "enquiry"
+            widget: "object"
+            fields:
+              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Text", name: "text", widget: "text" }
+              - { label: "Button Text", name: "button", widget: "string" }
+              - { label: "Notes", name: "notes", widget: "text" }
+
+          - label: "SEO Focus Section"
+            name: "seo_section"
+            widget: "object"
+            fields:
+              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - label: "Items"
+                name: "items"
+                widget: "list"
+                summary: "{{fields.title}}"
+                fields:
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Text", name: "text", widget: "text" }
+
+  - name: "gallery"
+    label: "Gallery"
+    delete: false
+    editor:
+      preview: false
+    files:
+      - label: "Gallery Items"
+        name: "gallery_items"
+        file: "content/gallery.json"
+        format: "json"
+        fields:
+          - label: "Items"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "Image", name: "src", widget: "image" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
