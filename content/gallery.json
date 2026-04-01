@@ -18,5 +18,15 @@
     "src": "assets/gallery-04.jpg",
     "title": "Metal Gate",
     "description": "Strong fabricated metal gate built to last."
+  },
+  {
+    "src": "assets/gallery-05.jpg",
+    "title": "Bespoke Gate",
+    "description": "Made-to-measure gate with a durable finish."
+  },
+  {
+    "src": "assets/gallery-06.jpg",
+    "title": "Powder-Coated Gate",
+    "description": "High-quality fabricated gate for long-lasting performance."
   }
 ]
