@@ -2,16 +2,16 @@
   "brand": {
     "name": "BC Fabrication",
     "tagline": "Metal and composite gates in Bolton & Northwest England",
-    "phone_display": "01204 YOUR NUMBER",
-    "phone_link": "01204YOURNUMBER",
-    "email": "your@email.com",
+   "phone_display": "07714419915",
+"phone_link": "07714419915",
+"email": "info@metalandcomposite.co.uk",
     "location": "Bolton, Greater Manchester"
   },
   "hero": {
     "title": "Metal & Composite Gates in Bolton & Northwest England",
     "text": "We specialise in bespoke metal and composite gates across Bolton and the Northwest of England. From driveway gates to side gates, all of our work is custom fabricated and powder coated for durability and a high-quality finish.",
     "primary_button": "View Gallery",
-    "secondary_button": "Call Now",
+   "secondary_button": "Send Enquiry",
     "image": "assets/gallery-01.jpg"
   }
 }
