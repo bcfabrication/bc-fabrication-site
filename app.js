@@ -32,7 +32,7 @@ function makeGallery(item) {
   heroText.textContent = site.hero.text;
   heroPrimary.textContent = site.hero.primary_button;
   heroSecondary.textContent = site.hero.secondary_button;
-  heroSecondary.href = 'tel:' + site.brand.phone_link;
+  heroSecondary.href = '#enquiry';
   heroImage.src = site.hero.image;
 
   servicesEyebrow.textContent = site.services_intro.eyebrow;
