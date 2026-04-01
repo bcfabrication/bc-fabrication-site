@@ -1,64 +1,22 @@
-{
-  "items": [
-    {
-      "src": "assets/uploads/gallery-01.jpg",
-      "title": "Composite Side Gate",
-      "description": "Bespoke composite side gate with a black fabricated frame and clean modern finish."
-    },
-    {
-      "src": "assets/uploads/gallery-02.jpg",
-      "title": "Modern Side Gate",
-      "description": "Custom side access gate built for privacy, security, and everyday use."
-    },
-    {
-      "src": "assets/uploads/gallery-03.jpg",
-      "title": "Composite Driveway Gates",
-      "description": "Double driveway gates with composite infill and powder-coated steel frame."
-    },
-    {
-      "src": "assets/uploads/gallery-04.jpg",
-      "title": "Grey Driveway Gates",
-      "description": "Modern grey composite driveway gate installation with a durable fabricated frame."
-    },
-    {
-      "src": "assets/uploads/gallery-05.jpg",
-      "title": "Contemporary Side Gate",
-      "description": "Made-to-measure side gate fitted neatly into a compact opening."
-    },
-    {
-      "src": "assets/uploads/gallery-06.jpg",
-      "title": "Double Gates",
-      "description": "Strong double gate system designed for secure access and a smart finish."
-    },
-    {
-      "src": "assets/uploads/gallery-07.jpg",
-      "title": "Black Driveway Gates",
-      "description": "Powder-coated black driveway gates for a clean and architectural look."
-    },
-    {
-      "src": "assets/uploads/gallery-08.jpg",
-      "title": "Compact Side Gate",
-      "description": "Neat side gate installation in a tight access space with a secure lockset."
-    },
-    {
-      "src": "assets/uploads/gallery-09.jpg",
-      "title": "Oak Effect Side Gate",
-      "description": "Warm oak-effect gate with a black frame for a premium modern look."
-    },
-    {
-      "src": "assets/uploads/gallery-10.jpg",
-      "title": "Premium Side Gate",
-      "description": "Dark composite side gate designed to complement modern brickwork and paving."
-    },
-    {
-      "src": "assets/uploads/gallery-11.jpg",
-      "title": "Feature Side Gate",
-      "description": "Bespoke side gate manufactured for a neat fit and strong long-term performance."
-    },
-    {
-      "src": "assets/uploads/gallery-12.jpg",
-      "title": "Wide Driveway Gate Set",
-      "description": "Large composite gate set designed for privacy, security, and kerb appeal."
-    }
-  ]
-}
+[
+  {
+    "src": "assets/gallery-01.jpg",
+    "title": "Side Gate",
+    "description": "Bespoke metal side gate installed in Bolton."
+  },
+  {
+    "src": "assets/gallery-02.jpg",
+    "title": "Driveway Gate",
+    "description": "Custom driveway gate with powder-coated finish."
+  },
+  {
+    "src": "assets/gallery-03.jpg",
+    "title": "Composite Gate",
+    "description": "Modern composite gate with privacy design."
+  },
+  {
+    "src": "assets/gallery-04.jpg",
+    "title": "Metal Gate",
+    "description": "Strong fabricated metal gate built to last."
+  }
+]
