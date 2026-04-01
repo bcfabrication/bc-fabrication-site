@@ -1,25 +1,20 @@
 {
   "brand": {
     "name": "BC Fabrication",
-    "tagline": "Serving customers across the UK",
-    "phone_display": "07714 419915",
-    "phone_link": "07714419915",
-    "email": "info@bcpowdercoating.co.uk",
-    "location": "Bolton"
-  },
-  "seo": {
-    "title": "BC Fabrication | Metal & Composite Side Gates and Driveway Gates",
-    "description": "BC Fabrication supplies bespoke metal and composite side gates and driveway gates. Request a quote online.",
-    "keywords": "metal side gates, composite side gates, driveway gates, composite driveway gates, bespoke gates"
+    "tagline": "Metal and composite gates in Bolton & Northwest England",
+    "phone_display": "01204 YOUR NUMBER",
+    "phone_link": "01204YOURNUMBER",
+    "email": "your@email.com",
+    "location": "Bolton, Greater Manchester"
   },
   "hero": {
-    "eyebrow": "Metal & Composite Gates",
-    "title": "Bespoke side gates and driveway gates built to suit your property",
-    "text": "BC Fabrication designs and fabricates made-to-measure metal and composite gates with a clean, modern finish. Every project is built for security, durability, and kerb appeal.",
-    "primary_button": "View Our Work",
-    "secondary_button": "Call 07714 419915",
-    "image": "assets/uploads/gallery-03.jpg"
-  },
+    "title": "Metal & Composite Gates in Bolton & Northwest England",
+    "text": "We specialise in bespoke metal and composite gates across Bolton and the Northwest of England. From driveway gates to side gates, all of our work is custom fabricated and powder coated for durability and a high-quality finish.",
+    "primary_button": "View Gallery",
+    "secondary_button": "Call Now",
+    "image": "assets/gallery-01.jpg"
+  }
+}
   "services_intro": {
     "eyebrow": "Services",
     "title": "Made-to-measure gates for side access and driveways",
