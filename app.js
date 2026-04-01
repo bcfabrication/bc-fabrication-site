@@ -45,13 +45,17 @@ function setImage(id, value, altText = "") {
     const galleryRaw = await loadJson("content/gallery.json");
     const gallery = Array.isArray(galleryRaw) ? galleryRaw : (galleryRaw.items || []);
 
-    document.title = site?.seo?.title || document.title;
+    if (site?.seo?.title) document.title = site.seo.title;
 
     const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc && site?.seo?.description) metaDesc.setAttribute("content", site.seo.description);
+    if (metaDesc && site?.seo?.description) {
+      metaDesc.setAttribute("content", site.seo.description);
+    }
 
     const metaKeywords = document.querySelector('meta[name="keywords"]');
-    if (metaKeywords && site?.seo?.keywords) metaKeywords.setAttribute("content", site.seo.keywords);
+    if (metaKeywords && site?.seo?.keywords) {
+      metaKeywords.setAttribute("content", site.seo.keywords);
+    }
 
     setText("brandName", site?.brand?.name);
     setText("brandTagline", site?.brand?.tagline);
@@ -67,13 +71,10 @@ function setImage(id, value, altText = "") {
     setText("heroEyebrow", site?.hero?.eyebrow || "METAL & COMPOSITE GATES");
     setText("heroTitle", site?.hero?.title);
     setText("heroText", site?.hero?.text);
-
     setText("heroPrimary", site?.hero?.primary_button || "View Gallery");
     setHref("heroPrimary", "#gallery");
-
     setText("heroSecondary", site?.hero?.secondary_button || "Send Enquiry");
     setHref("heroSecondary", "#enquiry");
-
     setImage("heroImage", site?.hero?.image || "assets/gallery-01.jpg", "BC Fabrication featured gate");
 
     setText("servicesEyebrow", site?.services_intro?.eyebrow);
@@ -94,10 +95,31 @@ function setImage(id, value, altText = "") {
       galleryGrid.innerHTML = gallery.map(makeGallery).join("");
     }
 
+    setText("aboutEyebrow", site?.about_intro?.eyebrow || "");
+    setText("aboutTitle", site?.about_intro?.title || "");
+
+    const aboutGrid = document.getElementById("aboutGrid");
+    if (aboutGrid && Array.isArray(site?.about)) {
+      aboutGrid.innerHTML = site.about.map(s => makeCard(s.title, s.text)).join("");
+    }
+
+    setText("seoEyebrow", site?.seo_intro?.eyebrow || "");
+    setText("seoTitle", site?.seo_intro?.title || "");
+
+    const seoGrid = document.getElementById("seoGrid");
+    if (seoGrid && Array.isArray(site?.seo_cards)) {
+      seoGrid.innerHTML = site.seo_cards.map(s => makeCard(s.title, s.text)).join("");
+    }
+
     setText("enquiryEyebrow", site?.enquiry_intro?.eyebrow || "ENQUIRY");
     setText("enquiryTitle", site?.enquiry_intro?.title || "Send an enquiry");
     setText("enquiryText", site?.enquiry_intro?.text || "Tell us what you need and we will get back to you.");
+    setText("enquiryNotes", site?.enquiry_intro?.notes || "");
 
+    const enquiryButton = document.getElementById("enquiryButton");
+    if (enquiryButton) {
+      enquiryButton.textContent = site?.enquiry_intro?.button || "Send Enquiry";
+    }
   } catch (err) {
     console.error(err);
   }
