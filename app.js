@@ -18,22 +18,7 @@ function makeGallery(item) {
   document.querySelector('meta[name="description"]').setAttribute('content', site.seo.description);
   document.querySelector('meta[name="keywords"]').setAttribute('content', site.seo.keywords);
 
-  brandName.textContent = site.brand.name;
-  brandTagline.textContent = site.brand.tagline;
-  footerBrand.textContent = site.brand.name;
-  footerPhone.textContent = site.brand.phone_display;
-  footerPhone.href = 'tel:' + site.brand.phone_link;
-  footerEmail.textContent = site.brand.email;
-  footerEmail.href = 'mailto:' + site.brand.email;
-  footerLocation.textContent = site.brand.location;
 
-  heroEyebrow.textContent = site.hero.eyebrow;
-  heroTitle.textContent = site.hero.title;
-  heroText.textContent = site.hero.text;
-  heroPrimary.textContent = site.hero.primary_button;
-  heroSecondary.textContent = site.hero.secondary_button;
-  heroSecondary.href = '#enquiry';
-  heroImage.src = site.hero.image;
 
   servicesEyebrow.textContent = site.services_intro.eyebrow;
   servicesTitle.textContent = site.services_intro.title;
