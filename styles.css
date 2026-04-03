@@ -374,6 +374,25 @@ textarea{
 .gallery-card {
   overflow: visible !important;
 }
-body {
-  background: red !important;
+/* ===== FINAL IMAGE OVERRIDE ===== */
+
+.hero-card,
+.gallery-card {
+  overflow: visible !important;
+  height: auto !important;
+  min-height: 0 !important;
+}
+
+.hero-card img,
+.gallery-card img,
+.gallery img {
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  max-height: none !important;
+  min-height: 0 !important;
+  aspect-ratio: auto !important;
+  object-fit: contain !important;
+  object-position: center !important;
+  display: block !important;
 }
