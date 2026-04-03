@@ -1,15 +1,37 @@
+const galleryItems = [
+  {
+    src: "assets/gallery-01.jpg",
+    title: "Side Gate",
+    description: "Bespoke metal side gate installed in Bolton."
+  },
+  {
+    src: "assets/gallery-02.jpg",
+    title: "Driveway Gate",
+    description: "Custom driveway gate with powder-coated finish."
+  },
+  {
+    src: "assets/gallery-03.jpg",
+    title: "Composite Gate",
+    description: "Modern composite gate with privacy design."
+  },
+  {
+    src: "assets/gallery-04.jpg",
+    title: "Metal Gate",
+    description: "Strong fabricated metal gate built to last."
+  },
+  {
+    src: "assets/gallery-05.jpg",
+    title: "Bespoke Gate",
+    description: "Made-to-measure gate with a durable finish."
+  },
+  {
+    src: "assets/gallery-06.jpg",
+    title: "Powder-Coated Gate",
+    description: "High-quality fabricated gate for long-lasting performance."
+  }
+];
 
-async function loadJson(path) {
-  const res = await fetch(path);
-  if (!res.ok) throw new Error(`Failed to load ${path}`);
-  return await res.json();
-}
-
-function makeCard(title, text) {
-  return `<article class="card"><h3>${title}</h3><p>${text}</p></article>`;
-}
-
-function makeGallery(item) {
+function makeGalleryCard(item) {
   return `
     <article class="gallery-card">
       <img src="${item.src}" alt="${item.title} by BC Fabrication">
@@ -21,106 +43,8 @@ function makeGallery(item) {
   `;
 }
 
-function setText(id, value) {
-  const el = document.getElementById(id);
-  if (el) el.textContent = value || "";
+const galleryGrid = document.getElementById("galleryGrid");
+
+if (galleryGrid) {
+  galleryGrid.innerHTML = galleryItems.map(makeGalleryCard).join("");
 }
-
-function setHref(id, value) {
-  const el = document.getElementById(id);
-  if (el) el.href = value || "#";
-}
-
-function setImage(id, value, altText = "") {
-  const el = document.getElementById(id);
-  if (el && value) {
-    el.src = value;
-    if (altText) el.alt = altText;
-  }
-}
-
-(async function init() {
-  try {
-    const site = await loadJson("content/site.json");
-    const galleryRaw = await loadJson("content/gallery.json");
-    const gallery = Array.isArray(galleryRaw) ? galleryRaw : (galleryRaw.items || []);
-
-    if (site?.seo?.title) document.title = site.seo.title;
-
-    const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc && site?.seo?.description) {
-      metaDesc.setAttribute("content", site.seo.description);
-    }
-
-    const metaKeywords = document.querySelector('meta[name="keywords"]');
-    if (metaKeywords && site?.seo?.keywords) {
-      metaKeywords.setAttribute("content", site.seo.keywords);
-    }
-
-    setText("brandName", site?.brand?.name);
-    setText("brandTagline", site?.brand?.tagline);
-    setText("footerBrand", site?.brand?.name);
-    setText("footerLocation", site?.brand?.location);
-
-    setText("footerPhone", site?.brand?.phone_display);
-    setHref("footerPhone", site?.brand?.phone_link ? `tel:${site.brand.phone_link}` : "#");
-
-    setText("footerEmail", site?.brand?.email);
-    setHref("footerEmail", site?.brand?.email ? `mailto:${site.brand.email}` : "#");
-
-    setText("heroEyebrow", site?.hero?.eyebrow || "METAL & COMPOSITE GATES");
-    setText("heroTitle", site?.hero?.title);
-    setText("heroText", site?.hero?.text);
-    setText("heroPrimary", site?.hero?.primary_button || "View Gallery");
-    setHref("heroPrimary", "#gallery");
-    setText("heroSecondary", site?.hero?.secondary_button || "Send Enquiry");
-    setHref("heroSecondary", "#enquiry");
-    setImage("heroImage", site?.hero?.image || "assets/gallery-01.jpg", "BC Fabrication featured gate");
-
-    setText("servicesEyebrow", site?.services_intro?.eyebrow);
-    setText("servicesTitle", site?.services_intro?.title);
-    setText("servicesText", site?.services_intro?.text);
-
-    const servicesGrid = document.getElementById("servicesGrid");
-    if (servicesGrid && Array.isArray(site?.services)) {
-      servicesGrid.innerHTML = site.services.map(s => makeCard(s.title, s.text)).join("");
-    }
-
-    setText("galleryEyebrow", site?.gallery_intro?.eyebrow || "PROJECT GALLERY");
-    setText("galleryTitle", site?.gallery_intro?.title || "Real BC Fabrication work");
-    setText("galleryText", site?.gallery_intro?.text || "A selection of recent installations.");
-
-    const galleryGrid = document.getElementById("galleryGrid");
-    if (galleryGrid) {
-      galleryGrid.innerHTML = gallery.map(makeGallery).join("");
-    }
-
-    setText("aboutEyebrow", site?.about_intro?.eyebrow || "");
-    setText("aboutTitle", site?.about_intro?.title || "");
-
-    const aboutGrid = document.getElementById("aboutGrid");
-    if (aboutGrid && Array.isArray(site?.about)) {
-      aboutGrid.innerHTML = site.about.map(s => makeCard(s.title, s.text)).join("");
-    }
-
-    setText("seoEyebrow", site?.seo_intro?.eyebrow || "");
-    setText("seoTitle", site?.seo_intro?.title || "");
-
-    const seoGrid = document.getElementById("seoGrid");
-    if (seoGrid && Array.isArray(site?.seo_cards)) {
-      seoGrid.innerHTML = site.seo_cards.map(s => makeCard(s.title, s.text)).join("");
-    }
-
-    setText("enquiryEyebrow", site?.enquiry_intro?.eyebrow || "ENQUIRY");
-    setText("enquiryTitle", site?.enquiry_intro?.title || "Send an enquiry");
-    setText("enquiryText", site?.enquiry_intro?.text || "Tell us what you need and we will get back to you.");
-    setText("enquiryNotes", site?.enquiry_intro?.notes || "");
-
-    const enquiryButton = document.getElementById("enquiryButton");
-    if (enquiryButton) {
-      enquiryButton.textContent = site?.enquiry_intro?.button || "Send Enquiry";
-    }
-  } catch (err) {
-    console.error(err);
-  }
-})();
