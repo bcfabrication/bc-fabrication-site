@@ -175,3 +175,20 @@ input,select,textarea{
   z-index: 999;
   text-decoration: none;
 }
+/* ===== IMAGE FIX OVERRIDE ===== */
+
+.hero-card img {
+  width: 100% !important;
+  height: auto !important;
+  object-fit: contain !important;
+}
+
+.gallery-card img {
+  width: 100% !important;
+  height: auto !important;
+  object-fit: contain !important;
+}
+
+.hero-card {
+  min-height: auto !important;
+}
