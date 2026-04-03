@@ -374,3 +374,6 @@ textarea{
 .gallery-card {
   overflow: visible !important;
 }
+body {
+  background: red !important;
+}
