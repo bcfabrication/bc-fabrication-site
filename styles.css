@@ -345,3 +345,32 @@ textarea{
     grid-template-columns:1fr;
   }
 }
+/* ===== FORCE IMAGE FIX ===== */
+
+.hero-card img {
+  width: 100% !important;
+  height: auto !important;
+  object-fit: contain !important;
+}
+
+.gallery-card img {
+  width: 100% !important;
+  height: auto !important;
+  object-fit: contain !important;
+}
+
+/* kill any forced heights */
+.hero-card {
+  min-height: auto !important;
+  height: auto !important;
+}
+
+.gallery-card {
+  height: auto !important;
+}
+
+/* remove cropping from parent */
+.hero-card,
+.gallery-card {
+  overflow: visible !important;
+}
